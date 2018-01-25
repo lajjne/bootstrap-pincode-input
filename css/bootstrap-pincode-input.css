@@ -22,17 +22,18 @@
 	
 	.pincode-container .pincode-text:last-child {
 		border-top-left-radius: 0;
-		border-bottom-left-radius: 0;
-		border-left-width: 0;
+		border-bottom-left-radius: 0;	
+		margin-left: -1px;
 	}
 	
 	.pincode-container .pincode-text:not(:first-child):not(:last-child) {
-		border-radius: 0;
-		border-left-width: 0;
+		border-radius: 0;		
+		margin-left: -1px;
 	}
 
   .pincode-container .pincode-text:focus {
 	background: cyan;
+	position:relative;
   }
 
   .pincode-container .pincode-text::selection {
