@@ -1,27 +1,40 @@
-.pincode-input-container {
-	display:inline-block;
-}
-.pincode-input-container input.first {
-	border-top-right-radius:0px;
-	border-bottom-right-radius:0px;
-}
-.pincode-input-container input.last {
-	border-top-left-radius:0px;
-	border-bottom-left-radius:0px;
-	border-left-width:0px;
-}
-.pincode-input-container input.mid {
-	border-radius:0px;
-	border-left-width:0px;
-}
-.pincode-input-text, .form-control.pincode-input-text {
-	width:35px;
-	float:left;
-	text-align: center;
-}
-.pincode-input-error{
-	clear:both;
-}
 
+.pincode-container {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+		-ms-flex-pack: center;
+			justify-content: center;
+	}
+	
+  .pincode-container .pincode-text{
+		width: 3rem;
+		padding: .5rem;
+		text-align: center;
+		}
+	
 
+  .pincode-container .pincode-text:first-child {
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+	
+	.pincode-container .pincode-text:last-child {
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+		border-left-width: 0;
+	}
+	
+	.pincode-container .pincode-text:not(:first-child):not(:last-child) {
+		border-radius: 0;
+		border-left-width: 0;
+	}
 
+  .pincode-container .pincode-text:focus {
+	background: cyan;
+  }
+
+  .pincode-container .pincode-text::selection {
+	background: transparent;
+  }
