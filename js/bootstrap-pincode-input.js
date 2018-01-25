@@ -10,7 +10,8 @@
 	var pluginName = "pincode";
 	var defaults = {
 		inputs: 6, // pincode length
-		change: function (input, value) {		// callback on change (keyup event)
+		change: function (input, value) {		
+			// callback on change (keyup event)
 			//input = the input textbox DOM element
 			//value = the value entered by user (or removed)
 		}
@@ -136,8 +137,16 @@
 					e.stopPropagation();
 					e.preventDefault();
 					$input.val("");
-					// TODO: shift chars to the left
-					
+					//  shift chars to the left
+					 var $curr = $input;
+					 var $next = $input.next();
+					 while ($next.length) {
+					 	$curr.val($next.val());
+					 	$curr = $next;
+						$next = $curr.next();
+					 }
+					 $('.pincode-text', this._container).last().val("");
+
 				} else if ((e.keyCode >= 48 && e.keyCode <= 57) || (e.keyCode >= 96 && e.keyCode <= 105)) {
 					// digit
 					e.stopPropagation();
